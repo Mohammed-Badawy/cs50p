@@ -10,11 +10,11 @@ def main():
 def validate(ip):
     # Search for ip pattern
     if matches := re.search(r"^(\d+)\.(\d+)\.(\d+)\.(\d+)$", ip):
-        for  match in matches.groups():
+        for match in matches.groups():
             # Check each octet if valid or invalid
             if not 0 <= int(match) <= 255 or re.search(r"^0+\d+$", match):
                 return False  # Invalid
-        return True # Valid
+        return True  # Valid
     
     # Return invalid if not ip pattern
     return False
